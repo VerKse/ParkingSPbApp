@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TVA-3L-nqp">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -14,16 +14,48 @@
             <objects>
                 <viewController title="Map" id="BYZ-38-t0r" customClass="MapViewController" customModule="ParkingSPbApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="d3f-Ek-HDg">
+                                <rect key="frame" x="159.5" y="246.5" width="56" height="174"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBj-md-ECX">
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="30"/>
+                                        <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <action selector="openLogInVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m6r-Nb-QWs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gga-Rp-MIn">
+                                        <rect key="frame" x="0.0" y="72" width="56" height="30"/>
+                                        <state key="normal" title="Add Car"/>
+                                        <connections>
+                                            <action selector="openAddCarVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mP0-SJ-5pl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6Z-dB-D8V">
+                                        <rect key="frame" x="0.0" y="144" width="56" height="30"/>
+                                        <state key="normal" title="Parked"/>
+                                        <connections>
+                                            <action selector="openParkedVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ub8-zU-4BX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d3f-Ek-HDg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CI0-nF-8JX"/>
+                            <constraint firstItem="d3f-Ek-HDg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wPk-NF-iMR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1H6-q7-FmA"/>
                     <connections>
                         <segue destination="Oeq-zo-E8T" kind="presentation" identifier="logIn" id="qMg-aP-h9U"/>
                         <segue destination="UMg-Fk-rkI" kind="presentation" identifier="addCar" id="V9m-PQ-MsF"/>
-                        <segue destination="UOr-bL-YpJ" kind="show" identifier="park" id="1Xl-hL-EXx"/>
+                        <segue destination="UOr-bL-YpJ" kind="presentation" identifier="park" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="Qut-Sd-LMj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -35,7 +67,7 @@
             <objects>
                 <viewController title="Add Car" id="UMg-Fk-rkI" customClass="AddCarViewController" customModule="ParkingSPbApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BNP-ee-Jq7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="T9B-rN-cue"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -50,23 +82,110 @@
             <objects>
                 <viewController title="Parked" id="UOr-bL-YpJ" customClass="ParkedViewController" customModule="ParkingSPbApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H2y-s7-3qZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="132" translatesAutoresizingMaskIntoConstraints="NO" id="1eB-yQ-Rdn">
+                                <rect key="frame" x="47" y="487" width="281" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPF-ST-kGo">
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="30"/>
+                                        <state key="normal" title="Заврешить"/>
+                                        <connections>
+                                            <action selector="endParkAction:" destination="UOr-bL-YpJ" eventType="touchUpInside" id="a5s-jJ-AVt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttb-n4-K03">
+                                        <rect key="frame" x="211" y="0.0" width="70" height="30"/>
+                                        <state key="normal" title="Продлить"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Машина запаркована" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CW0-WZ-h13">
+                                <rect key="frame" x="79.5" y="50" width="216" height="26.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="t3t-AA-bXb">
+                                <rect key="frame" x="61" y="255" width="253" height="157"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVL-62-G44">
+                                        <rect key="frame" x="86.5" y="0.0" width="80" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="до конца оплаченного времени" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjn-fK-cqf">
+                                        <rect key="frame" x="0.0" y="58" width="253" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6tu-MM-TA6">
+                                        <rect key="frame" x="88" y="95.5" width="77.5" height="24"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="q4V-Wf-RaV">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="cb5-VQ-M6j"/>
+                                                    <constraint firstAttribute="width" constant="24" id="lT4-S6-efH"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0P-25-2qk">
+                                                <rect key="frame" x="36" y="2" width="41.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="V0P-25-2qk" firstAttribute="leading" secondItem="q4V-Wf-RaV" secondAttribute="trailing" constant="12" id="iU4-0n-329"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHl-BI-YdC">
+                                        <rect key="frame" x="106" y="136.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zjn-fK-cqf" firstAttribute="centerX" secondItem="t3t-AA-bXb" secondAttribute="centerX" id="GHd-zp-R92"/>
+                                    <constraint firstItem="aVL-62-G44" firstAttribute="centerX" secondItem="t3t-AA-bXb" secondAttribute="centerX" id="wp9-NR-uGu"/>
+                                    <constraint firstItem="FHl-BI-YdC" firstAttribute="centerX" secondItem="t3t-AA-bXb" secondAttribute="centerX" id="yXv-93-gSz"/>
+                                    <constraint firstItem="6tu-MM-TA6" firstAttribute="centerX" secondItem="t3t-AA-bXb" secondAttribute="centerX" id="zxy-WP-zPi"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7NP-Ii-aWf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="t3t-AA-bXb" firstAttribute="centerX" secondItem="H2y-s7-3qZ" secondAttribute="centerX" id="5V5-lz-V5H"/>
+                            <constraint firstItem="7NP-Ii-aWf" firstAttribute="bottom" secondItem="1eB-yQ-Rdn" secondAttribute="bottom" constant="150" id="IRU-7h-h8K"/>
+                            <constraint firstItem="1eB-yQ-Rdn" firstAttribute="centerX" secondItem="H2y-s7-3qZ" secondAttribute="centerX" id="eE3-W5-Ua4"/>
+                            <constraint firstItem="CW0-WZ-h13" firstAttribute="centerX" secondItem="H2y-s7-3qZ" secondAttribute="centerX" id="jb2-lc-1uB"/>
+                            <constraint firstItem="CW0-WZ-h13" firstAttribute="top" secondItem="7NP-Ii-aWf" secondAttribute="top" constant="50" id="k5B-9s-kEW"/>
+                            <constraint firstItem="t3t-AA-bXb" firstAttribute="centerY" secondItem="H2y-s7-3qZ" secondAttribute="centerY" id="sJ5-6A-bNZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gy9-D3-D7U"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="FHl-BI-YdC" id="r9m-vh-d03"/>
+                        <outlet property="numberLabel" destination="V0P-25-2qk" id="TIj-Kg-el5"/>
+                        <outlet property="timeLabel" destination="aVL-62-G44" id="2Gw-Ck-bJX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdN-oV-mTH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909" y="832"/>
+            <point key="canvasLocation" x="1908" y="916"/>
         </scene>
         <!--LogIn-->
         <scene sceneID="Ad3-jT-zUu">
             <objects>
                 <viewController title="LogIn" id="Oeq-zo-E8T" customClass="LogInViewController" customModule="ParkingSPbApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8HQ-Za-hVP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="ypq-8X-eg7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -76,26 +195,9 @@
             </objects>
             <point key="canvasLocation" x="1909" y="-362"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7KS-rq-ruJ">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lxg-ns-Csw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TVA-3L-nqp" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="gdj-5u-YNO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mvK-VQ-Jbi"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="-23.188405797101453" y="76.339285714285708"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="car" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

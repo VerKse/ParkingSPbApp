@@ -15,7 +15,17 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func openLogInVC(_ sender: Any) {
+        performSegue(withIdentifier: "logIn", sender: nil)
+    }
+    
+    @IBAction func openAddCarVC(_ sender: Any) {
+        performSegue(withIdentifier: "addCar", sender: nil)
+    }
+    
+    @IBAction func openParkedVC(_ sender: Any) {
+        performSegue(withIdentifier: "park", sender: nil)
+    }
     /*
     // MARK: - Navigation
 
